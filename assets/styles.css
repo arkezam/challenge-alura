@@ -8,7 +8,8 @@ body{
 
 }
 
-input::placeholder{
+
+#caja-texto::placeholder{
     color: #8f9398;
 }
 .ingrese{
@@ -21,20 +22,22 @@ input::placeholder{
     margin-left: 200px;
     
 }
-#caja-texto{
-    align-self: flex-start;
-}
-.ingrese input{
+
+ 
+.ingrese textarea{
     width: 100%;
     height: auto;
     font-size: 35px;
     border-style: none;
-    
+    align-self: flex-start;
+    border: 0;
+    resize: none;
     background-color: #E5E5E5;
     color:#0A3871;
+ 
 }
 
-.ingrese input:focus{
+.ingrese textarea:focus{
     
     outline: none;
 }
@@ -45,20 +48,63 @@ input::placeholder{
     background: #0A3871;
     border-radius: 24px;
     padding: 24px;
-    font-size: 16px;
+    font-size: 18px;
     color: #FFFFFF;
     border-style: none;
+    margin-top: 23px;
  }
+
+ .btn-enc:active{
+    width: 368px;
+    height: 67px;
+    background: #93afd2;
+    border-radius: 24px;
+    padding: 24px;
+    font-size: 18px;
+    color: #0A3871;
+    border-style: none;
+    margin-top: 23px;
+ }
+
  .btn-dec{
     width: 368px;
     height: 67px;
     background: #D8DFE8;
     border-radius: 24px;
     padding: 24px;
-    font-size: 16px;
+    font-size: 18px;
     color: #0A3871;
     border-color: #0A3871;
  }
+
+
+ .btn-dec:active{
+    width: 368px;
+    height: 67px;
+    background: #98a3b1;
+    border-radius: 24px;
+    padding: 24px;
+    font-size: 18px;
+    color: #FFFFFF;
+    border-style: none;
+    margin-top: 23px;
+ }
+
+ #btn-cpy{ 
+    display: none;
+    margin: 50px auto;
+    width: 288px;
+    height: 67px;
+    background: #D8DFE8;
+    border-radius: 24px;
+    padding: 24px;
+    font-size: 18px;
+    color: #0A3871;
+    border-color: #0A3871;   
+
+ }
+
+
 .resultado{
     display: flex;
     text-align: center;
@@ -68,6 +114,15 @@ input::placeholder{
     height: 944px;
     width: 400px;
     border-radius: 32px;
+    box-shadow: #8f9398;
+    box-shadow: 6px -1px rgb(216, 216, 216);
+}
+
+.mensajep{
+    position: relative;
+    display: block;
+    margin-top: 570px;
+    color: #495057;
 
 }
 
@@ -91,3 +146,89 @@ input::placeholder{
     color: #495057;
 }
 
+.resultadoc{
+
+ 
+    background-color: white;
+    height: 944px;
+    width: 400px;
+    border-radius: 32px;
+    font-size:25px;
+    color: #0A3871;
+    text-align: left;
+    justify-content: start;
+    
+}
+
+#textres{
+    margin: 32px;
+    font-size:25px;
+    color: #0A3871;
+    text-align: left;
+    justify-content: start;
+}
+
+@media (max-width: 1100px) {
+    .media{
+        position: absolute;
+        margin-left: 20%;
+        margin-top: 20px;
+    }
+    #fig1{
+        display: none;
+    }
+    .container {
+      display: block;  
+    }
+    .resultadoc, .resultado{
+        display: inline-block; 
+         height: 133px;
+         width: 688px; 
+         margin-bottom: 50px;
+    }
+    .res-1,.res-2{
+         margin: 0px;
+    }  
+    .btn-enc, .btn-dec{
+        width: 260px;
+        
+        margin-left: 65px
+    }   
+    .ingrese{
+        height: 698px;  
+        margin-bottom: 60px;
+    }
+
+}
+@media (max-width: 850px) {
+    body{
+        margin: 20px;
+ 
+    }
+     
+    .btn-enc, .btn-dec{
+        margin: 0px;
+        width: 350px;
+   }   
+   .caja-texto{
+    font-size: 25px;
+    
+}   
+    .ingrese{
+        display: inline-table;
+        width: 100%;
+        margin-left: 0px;
+        height: 698px;  
+        margin-bottom: 60px;
+    }
+    .resultadoc, .resultado{
+        margin: 0px;
+         height: 186px;
+         width: 350px;  
+    }
+    .media{
+        position: relative;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+}

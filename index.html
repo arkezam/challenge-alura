@@ -7,30 +7,44 @@
     <title>Ecrypt - Decrypt</title>
     <link rel="stylesheet" href="assets/reset.css">
     <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <img src="assets/img/Logo.png" alt="logo">
 
     <div class="container">
-        <div class="ingrese">
-            <input id="caja-texto" type="text" placeholder="Ingrese el Texto Aquí">
-            <div class="botones">
-                <button class="btn-enc">
+        <div class="ingrese"><textarea id="caja-texto" placeholder="Ingrese el texto aqui" resize="none"></textarea>
+            <span class="mensajep">
+                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>Solo letras minúsculas y sin acentos</span>
+                <div class="botones">
+                
+                <button class="btn-enc" id="btn-enc">
                     Encriptar
                 </button>
-                <button class="btn-dec">
+                
+                <button class="btn-dec" id="btn-dec">
                     Desencriptar
                 </button>
             </div>
         </div>
-        <div class="resultado">
-            <img src="assets/img/Muñeco.png" alt="muñeco1">
-            <div class="texto-resultado">
-                <p class="res-1">Ningun mensaje fue encontrado...</p>
-                <p class="res-2">Ingresa el texto que desas encriptar</p>
+         
+<div class="media">
+            <div class="resultado" >
+                <p id="textres"></p>
+                <div id="resultado">
+                    
+                    <img id="fig1" src="assets/img/Muñeco.png" alt="muñeco1">
+                    <div class="texto-resultado">
+                        <p class="res-1">Ningun mensaje fue encontrado...</p>
+                        <p class="res-2">Ingresa el texto que desas encriptar</p>
+                    </div>
+                    
+                </div>
+                <button onclick="copiarAlPortapapeles('textres')" id="btn-cpy" >Copiar</button>
             </div>
-        </div>
-    </div>
+</div>
+     
+</div>
 <script src="assets/javascript.js"></script>
 </body>
 </html>
