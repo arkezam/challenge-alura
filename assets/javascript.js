@@ -2,72 +2,48 @@ function encriptar(s) {
   var decrypt = ["e", "i", "a", "o", "u"];
   var encrypt = ["enter", "imes", "ai", "ober", "ufat"];
 
-  for (let i = 0; i < s.length; i++) {
+  for (let i = 0; i < s.length + 5; i++) {
     s = s.replaceAll(decrypt[i], encrypt[i]);
   }
-
-  var cambiar = document.getElementById("resultado");
-  cambiar.setAttribute("class", "resultadoc");
-  cambiar.innerHTML = "";
-
-  var cambiartext = document.getElementById("textres");
-  cambiartext.innerHTML = s;
-  var botoncpy = document.getElementById("btn-cpy");
-  botoncpy.style.display = "block";
+  cambiarRes(s);
 }
 
 function desencriptar(s) {
   var decrypt = ["e", "i", "a", "o", "u"];
   var encrypt = ["enter", "imes", "ai", "ober", "ufat"];
 
-  for (let i = 0; i < s.length; i++) {
+  for (let i = 0; i < s.length + 5; i++) {
     s = s.replaceAll(encrypt[i], decrypt[i]);
   }
-
-  var cambiar = document.getElementById("resultado");
-  cambiar.setAttribute("class", "resultadoc");
-
- 
-  var cambiartext = document.getElementById("textres");
-  cambiartext.innerHTML = s;
+  cambiarRes(s);
 }
 
-var texto = document.getElementById("caja-texto");
+function cambiarRes(cadena) {
+  var cambiar = document.getElementById("resultado");
+  cambiar.setAttribute("class", "resultadoc");
+  cambiar.innerHTML = "";
 
-var botonPulsado = false;
+  var cambiartext = document.getElementById("textres");
+  cambiartext.innerHTML = cadena;
+
+  var botoncpy = document.getElementById("btn-cpy");
+  botoncpy.style.display = "block";
+}
+
 
 function esMayuscula(cadena) {
   var tieneMayusculas = false;
   for (var i = 0; i < cadena.length; i++) {
-    if (cadena[i].toUpperCase() === cadena[i]) {
+    if (cadena[i] == " " || cadena[i] == "!" || cadena[i] == "?") {
+      i++;
+    }
+    if (cadena[i].toUpperCase() == cadena[i]) {
       tieneMayusculas = true;
       break;
     }
   }
   return tieneMayusculas;
 }
-
-var btnenc = document.getElementById("btn-enc");
-
-btnenc.addEventListener("click", function () {
-  botonPulsado = true;
-
-  if (esMayuscula(texto.value) == true || texto.value == "") {
-    alert("El texto ingresado es invalido o contiene mayusculas");
-  } else {
-    encriptar(texto.value);
-  }
-});
-
-var btndec = document.getElementById("btn-dec");
-
-btndec.addEventListener("click", function () {
- 
- 
-    desencriptar(texto.value);
- 
-});
-
 function copiarAlPortapapeles(id_elemento) {
   var aux = document.createElement("input");
   aux.setAttribute("value", document.getElementById(id_elemento).innerHTML);
@@ -76,3 +52,21 @@ function copiarAlPortapapeles(id_elemento) {
   document.execCommand("copy");
   document.body.removeChild(aux);
 }
+
+var btnenc = document.getElementById("btn-enc");
+var botonPulsado = false;
+var btndec = document.getElementById("btn-dec");
+var texto = document.getElementById("caja-texto");
+
+btnenc.addEventListener("click", function () {
+  botonPulsado = true;
+  if (esMayuscula(texto.value)) {
+    alert("El texto ingresado es invalido o contiene mayusculas");
+  } else {
+    encriptar(texto.value);
+  }
+});
+
+btndec.addEventListener("click", function () {
+  desencriptar(texto.value);
+});
