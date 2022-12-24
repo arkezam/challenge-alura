@@ -255,6 +255,13 @@ body {
     border-radius: 20px;
   }
 
+  .icons {
+    position: absolute;
+    margin-left: 150px;
+    margin-top: 0px;
+    color: white;
+    font-size: 80px;
+  }
   .btn-enc,
   .btn-dec {
     margin-top: 15px;
