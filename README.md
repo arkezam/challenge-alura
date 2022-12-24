@@ -2,7 +2,7 @@
 
 **Ecriptador y Desencriptador**
 
-Para ver la demostración haz click en el siguiente [LINK] (https://arkezam.github.io/challengealura/)
+Para ver la demostración haz click en el siguiente [LINK](https://arkezam.github.io/challengealura/)
 
 **Bienvenido!**
 Realizando un encriptador de frases y desencriptar frases!
