@@ -2,7 +2,7 @@ function encriptar(s) {
   var decrypt = ["e", "i", "a", "o", "u"];
   var encrypt = ["enter", "imes", "ai", "ober", "ufat"];
 
-  for (let i = 0; i < s.length + 5; i++) {
+  for (let i = 0; i < s.length + decrypt.length; i++) {
     s = s.replaceAll(decrypt[i], encrypt[i]);
   }
   cambiarRes(s);
@@ -12,7 +12,7 @@ function desencriptar(s) {
   var decrypt = ["e", "i", "a", "o", "u"];
   var encrypt = ["enter", "imes", "ai", "ober", "ufat"];
 
-  for (let i = 0; i < s.length + 5; i++) {
+  for (let i = 0; i < s.length + encrypt.length; i++) {
     s = s.replaceAll(encrypt[i], decrypt[i]);
   }
   cambiarRes(s);
@@ -37,7 +37,7 @@ function esMayuscula(cadena) {
     if (cadena[i] == " " || cadena[i] == "!" || cadena[i] == "?") {
       i++;
     }
-    if (cadena[i].toUpperCase() == cadena[i]) {
+   else if (cadena[i].toUpperCase() == cadena[i]) {
       tieneMayusculas = true;
       break;
     }
